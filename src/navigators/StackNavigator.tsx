@@ -1,20 +1,37 @@
 import * as React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {DrawerNavigator} from './DrawerNavigator';
+import {Home} from '../screens/Home';
+import {TabNavigator1} from './TabNavigator1';
+import {TabNavigator2} from './TabNavigator2';
+import {TabNavigator3} from './TabNavigator3';
 
 const Stack = createStackNavigator();
 
 interface StackNavigatorProps {}
 
-export const AppContainer = (props: StackNavigatorProps) => {
+export const RootStack = (props: StackNavigatorProps) => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="DrawerNavigator" component={DrawerNavigator} />
+      <Stack.Screen
+        name="Home"
+        component={Home}
+        options={{title: 'Animated Bottom Tabs'}}
+      />
+      <Stack.Screen
+        name="TabNavigator1"
+        component={TabNavigator1}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="TabNavigator2"
+        component={TabNavigator2}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="TabNavigator3"
+        component={TabNavigator3}
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {},
-});

@@ -11,21 +11,21 @@ export const CustomDrawerContent = ({navigation}: any) => {
     <DrawerContentScrollView>
       <Text style={styles.title}>Drawer Navigator</Text>
       <DrawerItem
-        label="Tab 1"
+        label="Tab Bar 1"
         onPress={() => {
           navigation.navigate('Products');
         }}
       />
       <DrawerItem
-        label="Tab 2"
+        label="Tab Bar 2"
         onPress={() => {
-          navigation.navigate('Screen2');
+          navigation.navigate('TabNavigator2');
         }}
       />
       <DrawerItem
-        label="Tab 3"
+        label="Tab Bar 3"
         onPress={() => {
-          navigation.navigate('Screen3');
+          navigation.navigate('TabNavigator3');
         }}
       />
     </DrawerContentScrollView>

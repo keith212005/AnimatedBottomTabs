@@ -2,11 +2,10 @@ import * as React from 'react';
 import {Text, View, StyleSheet, Dimensions} from 'react-native';
 
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import {Products} from '../screens/Products';
-import {Favourites} from '../screens/Favourites';
-import {Profile} from '../screens/Profile';
 import {CustomDrawerContent} from './CustomDrawerContent';
-import {BottomTabNavigator} from './BottomTabNavigator';
+import {TabNavigator1} from './TabNavigator1';
+import {TabNavigator2} from './TabNavigator2';
+import {TabNavigator3} from './TabNavigator3';
 
 const Drawer = createDrawerNavigator();
 
@@ -20,8 +19,18 @@ export const DrawerNavigator = ({navigation}: any) => {
       drawerContent={props => <CustomDrawerContent {...props} />}>
       <Drawer.Screen
         options={{headerShown: false}}
-        name="BottomTabNavigator"
-        component={BottomTabNavigator}
+        name="TabNavigator1"
+        component={TabNavigator1}
+      />
+      <Drawer.Screen
+        options={{headerShown: false}}
+        name="TabNavigator2"
+        component={TabNavigator2}
+      />
+      <Drawer.Screen
+        options={{headerShown: false}}
+        name="TabNavigator3"
+        component={TabNavigator3}
       />
     </Drawer.Navigator>
   );
