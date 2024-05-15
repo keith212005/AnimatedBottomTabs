@@ -1,5 +1,5 @@
 import {useMemo} from 'react';
-import {curveBasis, line} from 'd3-shape';
+import {curveBundle, line} from 'd3-shape';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {SCREEN_WIDTH} from '../constants/Screen';
 import {parse} from 'react-native-redash';
@@ -20,7 +20,7 @@ const generateTabShapePath: GenerateTabShapePath = (
   const adjustedWidth = SCREEN_WIDTH / NUM_TABS;
   const tabX = adjustedWidth * position;
 
-  const lineGenerator = line().curve(curveBasis);
+  const lineGenerator = line().curve(curveBundle);
   const tab = lineGenerator([
     [tabX - 100 * SCALE, 0],
     [tabX - (65 + 35) * SCALE, 0],
