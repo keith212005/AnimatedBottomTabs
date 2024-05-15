@@ -89,7 +89,6 @@ export const CustomBottomTab: FC<BottomTabBarProps> = ({
 const styles = StyleSheet.create({
   container: {flex: 1},
   tabBarContainer: {
-    // backgroundColor: 'red',
     position: 'absolute',
     bottom: 0,
     zIndex: 2,

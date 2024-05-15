@@ -12,7 +12,7 @@ const Tab = createBottomTabNavigator();
 export const BottomTabNavigator = () => {
   return (
     <Tab.Navigator tabBar={props => <CustomBottomTab {...props} />}>
-      <Tab.Group screenOptions={{headerShown: false}}>
+      <Tab.Group>
         <Tab.Screen
           options={{tabBarLabel: 'Home'}}
           name="Products"
