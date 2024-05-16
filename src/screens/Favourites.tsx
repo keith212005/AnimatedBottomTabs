@@ -6,7 +6,7 @@ interface Screen3Props {}
 export const Favourites = (props: Screen3Props) => {
   return (
     <View style={styles.container}>
-      <Text>Screen3</Text>
+      <Text>Favourites screen</Text>
     </View>
   );
 };

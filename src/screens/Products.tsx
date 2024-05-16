@@ -6,7 +6,7 @@ interface Screen2Props {}
 export const Products = (props: Screen2Props) => {
   return (
     <View style={styles.container}>
-      <Text>Screen2</Text>
+      <Text>Products</Text>
     </View>
   );
 };

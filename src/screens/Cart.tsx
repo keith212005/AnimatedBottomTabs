@@ -4,7 +4,7 @@ import {Text, View, StyleSheet} from 'react-native';
 export const Cart = () => {
   return (
     <View style={styles.container}>
-      <Text>TabScreen1</Text>
+      <Text>Cart Screen</Text>
     </View>
   );
 };
