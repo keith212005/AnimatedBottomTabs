@@ -3,6 +3,7 @@ import {Favourites} from '../screens/Favourites';
 import {Products} from '../screens/Products';
 import {Profile} from '../screens/Profile';
 import {Icons} from '../components/Icons';
+import Colors from './Colors';
 
 export const TabArr = [
   {
@@ -12,6 +13,8 @@ export const TabArr = [
     activeIcon: 'grid',
     inactiveIcon: 'grid-outline',
     component: Products,
+    color: Colors.primary,
+    alphaClr: Colors.primaryAlpha,
   },
   {
     route: 'Favourites',
@@ -20,6 +23,8 @@ export const TabArr = [
     activeIcon: 'heart',
     inactiveIcon: 'heart-outline',
     component: Favourites,
+    color: Colors.green,
+    alphaClr: Colors.greenAlpha,
   },
   {
     route: 'Cart',
@@ -28,6 +33,8 @@ export const TabArr = [
     activeIcon: 'cart',
     inactiveIcon: 'cart-outline',
     component: Cart,
+    color: Colors.red,
+    alphaClr: Colors.redAlpha,
   },
   {
     route: 'Profile',
@@ -36,5 +43,7 @@ export const TabArr = [
     activeIcon: 'user',
     inactiveIcon: 'user-o',
     component: Profile,
+    color: Colors.purple,
+    alphaClr: Colors.purpleAlpha,
   },
 ];
