@@ -3,7 +3,7 @@ import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {TabArr} from '../constants/constants';
 import Colors from '../constants/Colors';
-import {Icon} from '../components/Icons';
+import {Icon, Icons} from '../components/Icons';
 import * as Animatable from 'react-native-animatable';
 
 const Tab = createBottomTabNavigator();
@@ -92,7 +92,7 @@ const TabButton = (props: any) => {
   );
 };
 
-export const TabNavigator2 = () => {
+export const TabNavigator2 = ({navigation}: any) => {
   return (
     <Tab.Navigator
       screenOptions={{
@@ -131,6 +131,16 @@ export const TabNavigator2 = () => {
               />
             ),
             tabBarButton: props => <TabButton {...props} item={item} />,
+            headerLeft: () => (
+              <Icon
+                type={Icons.Feather}
+                name={'chevron-left'}
+                size={24}
+                color={'black'}
+                style={{marginLeft: 10}}
+                onPress={() => navigation.goBack()}
+              />
+            ),
           }}
         />
       ))}

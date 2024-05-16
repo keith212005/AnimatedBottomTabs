@@ -34,15 +34,29 @@ export interface IconProps {
   color?: string;
   size?: number;
   style?: StyleProp<ViewStyle>;
+  onPress?: () => void;
 }
 
-export const Icon = ({type, name, color, size = 24, style}: IconProps) => {
+export const Icon = ({
+  type,
+  name,
+  color,
+  size = 24,
+  style,
+  onPress,
+}: IconProps) => {
   const fontSize = 24;
   const Tag = type;
   return (
     <>
       {type && name && (
-        <Tag name={name} size={size || fontSize} color={color} style={style} />
+        <Tag
+          name={name}
+          size={size || fontSize}
+          color={color}
+          style={style}
+          onPress={onPress}
+        />
       )}
     </>
   );

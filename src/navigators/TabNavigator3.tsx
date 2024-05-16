@@ -1,9 +1,9 @@
 import {useEffect, useRef} from 'react';
-import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, View, Text, TouchableOpacity, Platform} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {TabArr} from '../constants/constants';
 import Colors from '../constants/Colors';
-import {Icon} from '../components/Icons';
+import {Icon, Icons} from '../components/Icons';
 import * as Animatable from 'react-native-animatable';
 
 const Tab = createBottomTabNavigator();
@@ -42,16 +42,29 @@ const TabButton = (props: any) => {
             styles.btn,
             {backgroundColor: focused ? null : item.alphaClr},
           ]}>
-          <Icon
-            type={item.type}
-            name={item.activeIcon}
-            color={focused ? Colors.white : Colors.primary}
-          />
+          {!focused && (
+            <Icon
+              type={item.type}
+              name={item.activeIcon}
+              color={focused ? Colors.white : Colors.primary}
+            />
+          )}
           <Animatable.View ref={textViewRef}>
             {focused && (
-              <Text style={{color: Colors.white, paddingHorizontal: 8}}>
-                {item.label}
-              </Text>
+              <View
+                style={[
+                  styles.btn,
+                  {backgroundColor: focused ? null : item.alphaClr},
+                ]}>
+                <Icon
+                  type={item.type}
+                  name={item.activeIcon}
+                  color={focused ? Colors.white : Colors.primary}
+                />
+                <Text style={{color: Colors.white, marginLeft: 5}}>
+                  {item.label}
+                </Text>
+              </View>
             )}
           </Animatable.View>
         </View>
@@ -60,11 +73,11 @@ const TabButton = (props: any) => {
   );
 };
 
-export const TabNavigator3 = () => {
+export const TabNavigator3 = ({navigation}: any) => {
   return (
     <Tab.Navigator
       screenOptions={{
-        headerShown: false,
+        headerShown: true,
         tabBarStyle: {
           height: 70,
           position: 'absolute',
@@ -79,8 +92,10 @@ export const TabNavigator3 = () => {
           },
           shadowOpacity: 0.2,
           shadowRadius: 3.5,
-          marginBottom: 20,
-          paddingBottom: 10,
+          marginBottom: Platform.OS === 'ios' ? 20 : 0,
+          paddingBottom: Platform.OS === 'ios' ? 5 : 0,
+          justifyContent: 'center',
+          alignItems: 'center',
         },
       }}>
       {TabArr.map((item, index) => (
@@ -99,6 +114,16 @@ export const TabNavigator3 = () => {
               />
             ),
             tabBarButton: props => <TabButton {...props} item={item} />,
+            headerLeft: () => (
+              <Icon
+                type={Icons.Feather}
+                name={'chevron-left'}
+                size={24}
+                color={'black'}
+                style={{marginLeft: 10}}
+                onPress={() => navigation.goBack()}
+              />
+            ),
           }}
         />
       ))}
