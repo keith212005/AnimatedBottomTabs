@@ -10,6 +10,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import {getPathXCenterByIndex} from '../../utils/Path';
 import {usePath} from '../../hooks/usePath';
 import {SCREEN_WIDTH} from '../../constants/Screen';
+import Colors from '../../constants/Colors';
 
 export type TabProps = {
   label: string;
@@ -59,16 +60,16 @@ export const TabItem: FC<TabProps> = ({
   });
 
   const iconColor = useSharedValue(
-    activeIndex === index + 1 ? 'white' : 'rgba(128,128,128,0.8)',
+    activeIndex === index + 1 ? Colors.white : 'rgba(128,128,128,0.8)',
   );
 
   //Adjust icon color for this first render
   useEffect(() => {
     animatedActiveIndex.value = activeIndex;
     if (activeIndex === index + 1) {
-      iconColor.value = withTiming('white');
+      iconColor.value = withTiming(Colors.white);
     } else {
-      iconColor.value = withTiming('rgba(128,128,128,0.8)');
+      iconColor.value = withTiming(Colors.white);
     }
   }, [activeIndex]);
 
@@ -104,7 +105,7 @@ const styles = StyleSheet.create({
     width: LABEL_WIDTH,
   },
   label: {
-    color: 'white',
-    fontSize: 17,
+    color: Colors.white,
+    fontWeight: '700',
   },
 });

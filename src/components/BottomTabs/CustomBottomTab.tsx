@@ -14,6 +14,7 @@ import {getPathXCenter} from '../../utils/Path';
 import {TabItem} from './TabItem';
 import {AnimatedCircle} from './AnimatedCircle';
 import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
+import Colors from '../../constants/Colors';
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 
@@ -63,7 +64,7 @@ export const CustomBottomTab: FC<BottomTabBarProps> = ({
   return (
     <View style={styles.tabBarContainer}>
       <Svg width={SCREEN_WIDTH} height={tHeight} style={styles.shadowMd}>
-        <AnimatedPath animatedProps={animatedProps} fill="orange" />
+        <AnimatedPath animatedProps={animatedProps} fill={Colors.darkOrange} />
       </Svg>
       <AnimatedCircle circleX={circleXCoordinates} />
       <View style={[styles.tabItemsContainer, {height: tHeight}]}>

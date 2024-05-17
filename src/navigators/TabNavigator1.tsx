@@ -6,7 +6,8 @@ import {Cart} from '../screens/Cart';
 import {Profile} from '../screens/Profile';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {CustomBottomTab} from '../components/BottomTabs/CustomBottomTab';
-import Icon from 'react-native-vector-icons/Feather';
+import Icon from '../components/Icons';
+import {Icons} from '../components/Icons';
 
 const Tab = createBottomTabNavigator();
 
@@ -15,32 +16,29 @@ export const TabNavigator1 = ({navigation}: any) => {
     <Tab.Navigator
       screenOptions={{
         headerLeft: () => (
-          <TouchableOpacity
-            style={{flexDirection: 'row', alignItems: 'center'}}
-            onPress={() => {
-              navigation.goBack();
-            }}>
-            <Icon name="chevron-left" size={24} color="blue" />
-            <Text>Back</Text>
-          </TouchableOpacity>
+          <Icon
+            type={Icons.Entypo}
+            name={'chevron-left'}
+            size={24}
+            color={'black'}
+            style={{marginLeft: 10}}
+            onPress={() => navigation.goBack()}
+          />
+        ),
+        headerRight: () => (
+          <Icon
+            type={Icons.Entypo}
+            name={'dots-three-vertical'}
+            size={24}
+            color={'black'}
+            style={{marginRight: 20}}
+          />
         ),
       }}
       tabBar={props => <CustomBottomTab {...props} />}>
-      <Tab.Group
-        screenOptions={
-          {
-            // headerLeft: () => (
-            //   <Button onPress={() => {}} title="Info" color="red" />
-            // ),
-          }
-        }>
+      <Tab.Group>
         <Tab.Screen
-          options={{
-            tabBarLabel: 'Home',
-            // headerLeft: () => (
-            //   <Button onPress={() => {}} title="Info" color="red" />
-            // ),
-          }}
+          options={{tabBarLabel: 'Home'}}
           name="Products"
           component={Products}
         />

@@ -24,6 +24,8 @@ export default {
   steelBlue: 'steelblue',
   lightGreen: '#aaffaa',
   orange: '#FF886B',
+  darkOrange: '#FD7F20',
+  darkOrangeAlpha: 'rgba(253, 163, 102, 0.8)',
   blue: '#0984FF',
   darkGray: '#22313a',
   darkGray2: '#718096',

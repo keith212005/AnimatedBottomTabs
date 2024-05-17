@@ -1,6 +1,7 @@
 import {FC} from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 import Animated, {useAnimatedStyle} from 'react-native-reanimated';
+import Colors from '../../constants/Colors';
 
 type CircleProps = {
   circleX: Animated.SharedValue<number>;
@@ -24,7 +25,7 @@ const styles = StyleSheet.create({
     width: circleContainerSize,
     borderRadius: circleContainerSize,
     height: circleContainerSize,
-    backgroundColor: 'orange',
+    backgroundColor: Colors.darkOrange,
     justifyContent: 'center',
     alignItems: 'center',
   },

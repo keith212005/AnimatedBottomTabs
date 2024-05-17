@@ -20,7 +20,7 @@ const generateTabShapePath: GenerateTabShapePath = (
   const adjustedWidth = SCREEN_WIDTH / NUM_TABS;
   const tabX = adjustedWidth * position;
 
-  const lineGenerator = line().curve(curveBundle);
+  const lineGenerator = line().curve(curveBundle.beta(0.7));
   const tab = lineGenerator([
     [tabX - 100 * SCALE, 0],
     [tabX - (65 + 35) * SCALE, 0],

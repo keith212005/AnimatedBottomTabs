@@ -141,6 +141,15 @@ export const TabNavigator2 = ({navigation}: any) => {
                 onPress={() => navigation.goBack()}
               />
             ),
+            headerRight: () => (
+              <Icon
+                type={Icons.Entypo}
+                name={'dots-three-vertical'}
+                size={24}
+                color={'black'}
+                style={{marginRight: 20}}
+              />
+            ),
           }}
         />
       ))}
